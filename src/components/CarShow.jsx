@@ -2,11 +2,14 @@
 
 import React from 'react'
 import { CubeCamera, Environment, OrbitControls, PerspectiveCamera } from '@react-three/drei'
-
-import "@/styles/global.css"
+import { EffectComposer, Bloom, ChromaticAberration, DepthOfField } from '@react-three/postprocessing'
+import { BlendFunction } from 'postprocessing'
 import Ground from './Ground'
 import Car from './Car'
 import Rings from './Rings'
+import Boxes from './Boxes'
+
+import "@/styles/global.css"
 
 const CarShow = () => {
   return (
@@ -36,6 +39,7 @@ const CarShow = () => {
 
       <Ground />
       <Rings />
+      <Boxes />
 
       <CubeCamera resolution={256} frames={Infinity}>
         {texture => (
@@ -45,6 +49,23 @@ const CarShow = () => {
           </>
         )}
       </CubeCamera>
+
+      {/* <EffectComposer>
+        <DepthOfField focusDistance={0.0035} focalLength={0.01} bokehScale={2} height={1000} />
+        <Bloom
+          blendFunction={BlendFunction.ADD}
+          intensity={0.02}
+          width={500}
+          height={500}
+          kernelSize={5}
+          luminanceThreshold={0.15}
+          luminanceSmoothing={0.025}
+        />
+        <ChromaticAberration
+          blendFunction={BlendFunction.NORMAL}
+          offset={[0.0005, 0.0012]}
+        />
+      </EffectComposer> */}
     </>
   )
 }
