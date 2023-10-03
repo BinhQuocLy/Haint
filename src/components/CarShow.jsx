@@ -1,11 +1,12 @@
 "use client"
 
 import React from 'react'
-import { OrbitControls, PerspectiveCamera } from '@react-three/drei'
+import { CubeCamera, Environment, OrbitControls, PerspectiveCamera } from '@react-three/drei'
 
 import "@/styles/global.css"
 import Ground from './Ground'
 import Car from './Car'
+import Rings from './Rings'
 
 const CarShow = () => {
   return (
@@ -34,7 +35,16 @@ const CarShow = () => {
       />
 
       <Ground />
-      <Car />
+      <Rings />
+
+      <CubeCamera resolution={256} frames={Infinity}>
+        {texture => (
+          <>
+            <Environment map={texture} />
+            <Car />
+          </>
+        )}
+      </CubeCamera>
     </>
   )
 }
