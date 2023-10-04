@@ -10,6 +10,7 @@ import Rings from './Rings'
 import Boxes from './Boxes'
 
 import "@/styles/global.css"
+import FloatingGrid from './FloatingGrid'
 
 const CarShow = () => {
   return (
@@ -49,6 +50,8 @@ const CarShow = () => {
           </>
         )}
       </CubeCamera>
+
+      <FloatingGrid />
 
       {/* <EffectComposer>
         <DepthOfField focusDistance={0.0035} focalLength={0.01} bokehScale={2} height={1000} />
