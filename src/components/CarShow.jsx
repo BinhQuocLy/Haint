@@ -3,7 +3,7 @@
 import React from 'react'
 import { CubeCamera, Environment, OrbitControls, PerspectiveCamera } from '@react-three/drei'
 import { EffectComposer, Bloom, ChromaticAberration, DepthOfField } from '@react-three/postprocessing'
-import { BlendFunction } from 'postprocessing'
+import { BlendFunction, BlurPass, Resizer, KernelSize, Resolution } from 'postprocessing'
 import Ground from './Ground'
 import Car from './Car'
 import Rings from './Rings'
@@ -52,23 +52,6 @@ const CarShow = () => {
       </CubeCamera>
 
       <FloatingGrid />
-
-      {/* <EffectComposer>
-        <DepthOfField focusDistance={0.0035} focalLength={0.01} bokehScale={2} height={1000} />
-        <Bloom
-          blendFunction={BlendFunction.ADD}
-          intensity={0.02}
-          width={500}
-          height={500}
-          kernelSize={5}
-          luminanceThreshold={0.15}
-          luminanceSmoothing={0.025}
-        />
-        <ChromaticAberration
-          blendFunction={BlendFunction.NORMAL}
-          offset={[0.0005, 0.0012]}
-        />
-      </EffectComposer> */}
     </>
   )
 }
