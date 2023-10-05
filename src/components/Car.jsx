@@ -21,7 +21,6 @@ const Car = () => {
         object.material.envMapIntensity = 20;
       }
     });
-    console.log(gltf);
   }, [gltf]);
 
   useFrame((state, delta) => {
