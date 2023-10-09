@@ -39,7 +39,7 @@ const CarShow = () => {
       />
 
       <Ground />
-      <Rings />
+      {/* <Rings /> */}
       <Boxes />
 
       <CubeCamera resolution={256} frames={Infinity}>
@@ -51,7 +51,7 @@ const CarShow = () => {
         )}
       </CubeCamera>
 
-      <FloatingGrid />
+      {/* <FloatingGrid /> */}
     </>
   )
 }
